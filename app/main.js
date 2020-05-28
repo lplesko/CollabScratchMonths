@@ -234,8 +234,11 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                     return [4 /*yield*/, view.whenLayerView(layer)];
                 case 2:
                     layerView = _a.sent();
-                    return [4 /*yield*/, view.whenLayerView(layer)];
+                    return[4 /*yield*/, queryLayerStatistics(layer)];
                 case 3:
+                    layerView = _a.sent();
+                    return [4 /*yield*/, view.whenLayerView(layer)];
+                case 4:
                     layerStats = _a.sent();
                     heatmapChart_1.updateGrid(layerStats, layerView);
                     chartExpand.watch("expanded", resetOnCollapse);
