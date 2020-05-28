@@ -38,25 +38,6 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
     var _this = this;
     Object.defineProperty(exports, "__esModule", { value: true });
     (function () { return __awaiter(_this, void 0, void 0, function () {
-        function filterByYear(event) {
-            var selectedYear = event.target.getAttribute("data-year");
-            yearsNodes.forEach(function (node) {
-                var year = node.innerText;
-                if (year !== selectedYear) {
-                    if (node.classList.contains("visible-year")) {
-                        node.classList.remove("visible-year");
-                    }
-                }
-                else {
-                    if (!node.classList.contains("visible-year")) {
-                        node.classList.add("visible-year");
-                    }
-                }
-            });
-            layerView.filter = new FeatureFilter({
-                where: "Year = '" + selectedYear + "'"
-            });
-        }
         function resetOnCollapse(expanded) {
             if (!expanded) {
                 resetVisuals();
@@ -196,12 +177,9 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                 highlight.remove();
                 highlight = null;
             }
-            yearsNodes.forEach(function (node) {
-                node.classList.add("visible-year");
-            });
             heatmapChart_1.updateGrid(layerStats, layerView, true);
         }
-        var layer, districtsLayer, map, mapList, view, yearsElement, chartExpand, yearsExpand, layerView, districtsLayerView, layerStats, yearsNodes, highlight, previousId, resetBtn;
+        var layer, districtsLayer, map, mapList, view, chartExpand, layerView, districtsLayerView, layerStats, highlight, previousId, resetBtn;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -245,21 +223,12 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                     return [4 /*yield*/, view.when()];
                 case 1:
                     _a.sent();
-                    yearsElement = document.getElementById("years-filter");
-                    yearsElement.style.visibility = "visible";
                     chartExpand = new Expand({
                         view: view,
                         content: document.getElementById("chartDiv"),
                         expandIconClass: "esri-icon-chart",
                         group: "top-left"
                     });
-                    yearsExpand = new Expand({
-                        view: view,
-                        content: yearsElement,
-                        expandIconClass: "esri-icon-filter",
-                        group: "top-left"
-                    });
-                    view.ui.add(yearsExpand, "top-left");
                     view.ui.add(chartExpand, "top-left");
                     view.ui.add("titleDiv", "top-right");
                     return [4 /*yield*/, view.whenLayerView(layer)];
@@ -272,9 +241,6 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                 case 4:
                     layerStats = _a.sent();
                     heatmapChart_1.updateGrid(layerStats, layerView);
-                    yearsElement.addEventListener("click", filterByYear);
-                    yearsNodes = document.querySelectorAll(".year-item");
-                    yearsExpand.watch("expanded", resetOnCollapse);
                     chartExpand.watch("expanded", resetOnCollapse);
                     highlight = null;
                     view.on("drag", ["Control"], eventListener);
