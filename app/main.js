@@ -179,7 +179,7 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
             }
             heatmapChart_1.updateGrid(layerStats, layerView, true);
         }
-        var layer, map, mapList, view, chartExpand, layerView, layerStats, highlight, previousId, resetBtn;
+        var layer, districtsLayer, map, mapList, view, chartExpand, layerView, districtsLayerView, layerStats, highlight, previousId, resetBtn;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -187,7 +187,13 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                         portalItem: {
                             id: "3a8aae65f6d64c9dacce3049ebe32f0c"
                         },
-                        outFields: ["MonthName", "YEAR"],
+                        outFields: ["MonthName", "YEAR"]
+                    });
+                    districtsLayer = new FeatureLayer({
+                        title: "districts",
+                        portalItem: {
+                            id: "3a8aae65f6d64c9dacce3049ebe32f0c"
+                        },
                         popupTemplate: null,
                         opacity: 0,
                         renderer: new renderers_1.SimpleRenderer({
