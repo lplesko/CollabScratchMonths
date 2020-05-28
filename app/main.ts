@@ -56,21 +56,12 @@ import { months, years } from "./constants";
   });
 
   await view.when();
-  const yearsElement = document.getElementById("years-filter");
-  yearsElement.style.visibility = "visible";
   const chartExpand = new Expand({
     view,
     content: document.getElementById("chartDiv"),
     expandIconClass: "esri-icon-chart",
     group: "top-left"
   });
-  const yearsExpand = new Expand({
-    view,
-    content: yearsElement,
-    expandIconClass: "esri-icon-filter",
-    group: "top-left"
-  });
-  view.ui.add(yearsExpand, "top-left");
   view.ui.add(chartExpand, "top-left");
   view.ui.add("titleDiv", "top-right");
 
@@ -79,29 +70,6 @@ import { months, years } from "./constants";
 
   const layerStats = await queryLayerStatistics(layer);
   updateGrid(layerStats, layerView);
-  
-  yearsElement.addEventListener("click", filterByYear);
-  const yearsNodes = document.querySelectorAll(`.year-item`);
-
-  function filterByYear (event: any) {
-    const selectedYear = event.target.getAttribute("data-year");
-    yearsNodes.forEach( (node:HTMLDivElement) => {
-      const year = node.innerText;
-      if(year !== selectedYear){
-        if(node.classList.contains("visible-year")) {
-          node.classList.remove("visible-year");
-        }
-      } else {
-        if(!node.classList.contains("visible-year")) {
-          node.classList.add("visible-year");
-        }
-      }
-    });
-
-    layerView.filter = new FeatureFilter({
-      where: `Year = '${selectedYear}'`
-    });
-  }
 
   function resetOnCollapse (expanded:boolean) {
     if (!expanded){
@@ -109,7 +77,6 @@ import { months, years } from "./constants";
     }
   }
 
-  yearsExpand.watch("expanded", resetOnCollapse);
   chartExpand.watch("expanded", resetOnCollapse);
 
   let highlight:any = null;
@@ -247,9 +214,7 @@ import { months, years } from "./constants";
       highlight.remove();
       highlight = null;
     }
-    yearsNodes.forEach( (node:HTMLDivElement) => {
-      node.classList.add("visible-year");
-    });
+    
     updateGrid(layerStats, layerView, true);
   }
 
