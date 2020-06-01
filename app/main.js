@@ -53,7 +53,7 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                             return [4 /*yield*/, view.hitTest(event)];
                         case 1:
                             hitResponse = _a.sent();
-                            hitResults = hitResponse.results.filter(function (hit) { return hit.graphic.layer === layer; });
+                            hitResults = hitResponse.results.filter(function (hit) { return hit.graphic.layer === districtsLayer; });
                             if (!(hitResults.length > 0)) return [3 /*break*/, 3];
                             graphic = hitResults[0].graphic;
                             if (!(previousId !== graphic.attributes.FID)) return [3 /*break*/, 3];
@@ -62,7 +62,7 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                                 highlight.remove();
                                 highlight = null;
                             }
-                            highlight = layerView.highlight([previousId]);
+                            highlight = districtsLayerView.highlight([previousId]);
                             geometry = graphic && graphic.geometry;
                             queryOptions = {
                                 geometry: geometry,
@@ -206,7 +206,7 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                     
                     map = new EsriMap({
                         basemap: "gray-vector",
-                        layers: [layer]
+                        layers: [layer, districtsLayer]
                     });
 
                     view = new MapView({
@@ -234,9 +234,9 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                     return [4 /*yield*/, view.whenLayerView(layer)];
                 case 2:
                     layerView = _a.sent();
-                    return[4 /*yield*/, view.whenLayerView(layer)];
+                    return[4 /*yield*/, view.whenLayerView(districtsLayer)];
                 case 3:
-                    layerView = _a.sent();
+                    districtsLayerView = _a.sent();
                     return [4 /*yield*/, queryLayerStatistics(layer)];
                 case 4:
                     layerStats = _a.sent();
