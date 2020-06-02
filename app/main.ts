@@ -18,7 +18,7 @@ import { months, years } from "./constants";
 
   const layer = new FeatureLayer({
     portalItem: {
-      id: "3a8aae65f6d64c9dacce3049ebe32f0c"
+      id: "c0912eeb4037463589798a0b44aadb88"
     },
     outFields: [ "MonthName", "Year" ]
   });
@@ -26,7 +26,7 @@ import { months, years } from "./constants";
   const districtsLayer = new FeatureLayer({
     title: "districts",
     portalItem: {
-      id: "3a8aae65f6d64c9dacce3049ebe32f0c"
+      id: "c0912eeb4037463589798a0b44aadb88"
     },
     popupTemplate: null,
     opacity: 0,
