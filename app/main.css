@@ -62,7 +62,7 @@ body, #viewDiv {
 .row12 { grid-area: row12; }
 
 #logoDiv {
-  padding: 0;
+  padding: 5px;
   width: 210px;
 }
 
