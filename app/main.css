@@ -61,6 +61,14 @@ body, #viewDiv {
 .row11 { grid-area: row11; }
 .row12 { grid-area: row12; }
 
+#logoDiv {
+  padding: 12px;
+  background-color: black;
+  color: pink;
+  text-align: center;
+  width: 100px;
+}
+
 #dataDescription {
   font-size: 12pt;
   padding: 10px 5px 0px 5px;
