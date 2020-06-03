@@ -187,13 +187,7 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                         portalItem: {
                             id: "c0912eeb4037463589798a0b44aadb88"
                         },
-                        outFields: ["MonthName", "YEAR"]
-                    });
-                    districtsLayer = new FeatureLayer({
-                        title: "districts",
-                        portalItem: {
-                            id: "c0912eeb4037463589798a0b44aadb88"
-                        },
+                        outFields: ["*"],
                         popupTemplate: {
                           title: "{ENGLISH_NA} | {MonthName} {Year}",
                           expressionInfos: [
@@ -288,7 +282,14 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                               ]
                             }     
                           ]
+                        }
+                    });
+                    districtsLayer = new FeatureLayer({
+                        title: "districts",
+                        portalItem: {
+                            id: "c0912eeb4037463589798a0b44aadb88"
                         },
+                        popupTemplate: null,
                         opacity: 0,
                         renderer: new renderers_1.SimpleRenderer({
                             symbol: new symbols_1.SimpleFillSymbol({
