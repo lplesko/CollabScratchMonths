@@ -95,10 +95,6 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                                 new StatisticDefinition({
                                     onStatisticField: "Total_visits_dup",
                                     outStatisticFieldName: "value",
-                                    format: {
-                                        digitSeparator: true,
-                                        places: 0
-                                    },
                                     statisticType: "sum"
                                 })
                             ];
@@ -136,10 +132,6 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                                 new StatisticDefinition({
                                     onStatisticField: "Total_visits_dup",
                                     outStatisticFieldName: "value",
-                                    format: {
-                                        digitSeparator: true,
-                                        places: 0
-                                    },
                                     statisticType: "sum"
                                 })
                             ];
