@@ -62,8 +62,8 @@ body, #viewDiv {
 .row12 { grid-area: row12; }
 
 #logoDiv {
-  padding: 5px;
-  width: 210px;
+  padding: 10px;
+  width: 224px;
 }
 
 #dataDescription {
