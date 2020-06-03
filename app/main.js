@@ -93,10 +93,8 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                             query = layerView.layer.createQuery();
                             query.outStatistics = [
                                 new StatisticDefinition({
-                                    onStatisticField: "Total_visits_dup",
+                                    onStatisticField: "Pop2016",
                                     outStatisticFieldName: "value",
-                                        format: {
-                                            digitSeparator: true},
                                     statisticType: "sum"
                                 })
                             ];
@@ -132,10 +130,8 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                             query = layer.createQuery();
                             query.outStatistics = [
                                 new StatisticDefinition({
-                                    onStatisticField: "Total_visits_dup",
+                                    onStatisticField: "Pop2016",
                                     outStatisticFieldName: "value",
-                                        format: {
-                                            digitSeparator: true},
                                     statisticType: "sum"
                                 })
                             ];
