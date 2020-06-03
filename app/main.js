@@ -187,7 +187,7 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                         portalItem: {
                             id: "c0912eeb4037463589798a0b44aadb88"
                         },
-                        outFields: ["MonthName", "YEAR"]
+                        outFields: [*]
                     });
                     districtsLayer = new FeatureLayer({
                         title: "districts",
