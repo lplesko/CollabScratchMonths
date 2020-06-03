@@ -11,13 +11,6 @@ body, #viewDiv {
   background-color: white;
 }
 
-#infoDiv{
-  background-color: white;
-  padding: 10px;
-  max-height: 300px;
-  overflow: auto;
-}
-
 #resetBtn {
   float: right;
   cursor: pointer;
