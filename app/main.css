@@ -88,3 +88,16 @@ body, #viewDiv {
   align-items: center;
   transition: background-color 125ms ease-in-out;
 }
+
+.esri-widget {
+  background-color: rgba(50,50,50,0.9);
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
