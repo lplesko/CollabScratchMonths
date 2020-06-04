@@ -188,7 +188,7 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                             id: "c0912eeb4037463589798a0b44aadb88"
                         },
                         outFields: ["*"],
-                        popupTemplate: {
+                                             popupTemplate: {
                           title: "{ENGLISH_NA} | {MonthName} {Year}",
                           expressionInfos: [
                             {
@@ -261,7 +261,7 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                                   caption: "",
                                   value: {
                                     fields: ["Band_Owned", "Emergency_Shelter", "On_the_Street", "Rooming_House", "Own_Home", "Private_Rental", "Social_Housing", "Family_or_Friends", "Youth_Home_Shelter", "Unknown_Housing"],
-                                    normalizeField, null
+                                    normalizeField: null
                                   }
                                 }
                               ]
