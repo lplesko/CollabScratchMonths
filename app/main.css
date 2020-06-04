@@ -89,10 +89,7 @@ body, #viewDiv {
   transition: background-color 125ms ease-in-out;
 }
 
-.esri-widget {
-  background-color: rgba(50,50,50,0.9);
-  width: 32px;
-  height: 32px;
+.esri-widget--logo {
   overflow: hidden;
   cursor: pointer;
   text-align: center;
