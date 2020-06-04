@@ -88,13 +88,3 @@ body, #viewDiv {
   align-items: center;
   transition: background-color 125ms ease-in-out;
 }
-
-.esri-widget--logo {
-  overflow: hidden;
-  cursor: pointer;
-  text-align: center;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-}
