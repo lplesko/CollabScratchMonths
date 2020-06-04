@@ -12,6 +12,8 @@ body, #viewDiv {
 }
 
 #resetBtn {
+  background-color: rgba(50,50,50,0.9);
+  color: white;
   float: right;
   cursor: pointer;
   width: 100%;
