@@ -93,7 +93,8 @@ import { months, years } from "./constants";
               type: "pie-chart",
               caption: "",
               value: {
-                fields: ["Band_Owned", "Emergency_Shelter", "On_the_Street", "Rooming_House", "Own_Home", "Private_Rental", "Social_Housing", "Family_or_Friends", "Youth_Home_Shelter", "Unknown_Housing"]
+                fields: ["Band_Owned", "Emergency_Shelter", "On_the_Street", "Rooming_House", "Own_Home", "Private_Rental", "Social_Housing", "Family_or_Friends", "Youth_Home_Shelter", "Unknown_Housing"],
+                normalizeField: null
               }
             }
           ]
@@ -106,8 +107,8 @@ import { months, years } from "./constants";
               type: "pie-chart",
               caption: "",
               value: {
-                fields: [ "Canada_Child_Benefit", "Disability_Benefits", "Employment", "Employment_Insurance", "No_Income", "Pension", "Provincial_Disability", "Social_Assistance", "Student_Loan", "Unknown_Income" ]
-
+                fields: [ "Canada_Child_Benefit", "Disability_Benefits", "Employment", "Employment_Insurance", "No_Income", "Pension", "Provincial_Disability", "Social_Assistance", "Student_Loan", "Unknown_Income"],
+                normalizeField: null
               }
             }
           ]
