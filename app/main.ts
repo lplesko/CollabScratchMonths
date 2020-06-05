@@ -12,6 +12,7 @@ import { SimpleRenderer } from "esri/renderers";
 import { updateGrid } from "./heatmapChart";
 
 import Expand = require("esri/widgets/Expand");
+import Search = require("esri/widgets/Search");
 import { months, years } from "./constants";
 
 ( async () => {
@@ -148,6 +149,10 @@ import { months, years } from "./constants";
       fillOpacity: 0
     }
   });
+  
+  const search = new Search({
+    view: view
+  });
 
   await view.when();
   const chartExpand = new Expand({
@@ -158,6 +163,7 @@ import { months, years } from "./constants";
   });
   view.ui.add(chartExpand, "top-left");
   view.ui.add("logoDiv", "bottom-left");
+  view.ui.add(search, "top-right");
 
   const layerView = await view.whenLayerView(layer) as esri.FeatureLayerView;
   const districtsLayerView = await view.whenLayerView(districtsLayer) as esri.FeatureLayerView;
