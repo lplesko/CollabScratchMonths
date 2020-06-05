@@ -3,6 +3,7 @@ import esri = __esri;
 import EsriMap = require("esri/Map");
 import MapView = require("esri/views/MapView");
 import FeatureLayer = require("esri/layers/FeatureLayer");
+import Legend = require("esri/widgets/Legend");
 import FeatureFilter = require("esri/views/layers/support/FeatureFilter");
 import FeatureEffect = require("esri/views/layers/support/FeatureEffect");
 import StatisticDefinition = require("esri/tasks/support/StatisticDefinition");
@@ -150,6 +151,16 @@ import { months, years } from "./constants";
     }
   });
   
+    const legend = new Legend({
+      view: view,
+      layerInfos: [
+        {
+          layer: layer,
+          title: "Food Bank Usage"
+        }
+      ]
+    });
+  
   const search = new Search({
     view: view
   });
@@ -164,6 +175,7 @@ import { months, years } from "./constants";
   view.ui.add(chartExpand, "top-left");
   view.ui.add("logoDiv", "bottom-left");
   view.ui.add(search, "top-right");
+  view.ui.add(legend, "bottom-right");
 
   const layerView = await view.whenLayerView(layer) as esri.FeatureLayerView;
   const districtsLayerView = await view.whenLayerView(districtsLayer) as esri.FeatureLayerView;
