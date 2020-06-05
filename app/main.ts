@@ -157,7 +157,7 @@ import { months, years } from "./constants";
     group: "top-left"
   });
   view.ui.add(chartExpand, "top-left");
-  view.ui.add("logoDiv", "bottom-right");
+  view.ui.add("logoDiv", "bottom-left");
 
   const layerView = await view.whenLayerView(layer) as esri.FeatureLayerView;
   const districtsLayerView = await view.whenLayerView(districtsLayer) as esri.FeatureLayerView;
