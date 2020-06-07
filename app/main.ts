@@ -143,7 +143,7 @@ import { months, years } from "./constants";
     map: map,
     container: "viewDiv",
     center: [ -85, 50 ],
-    zoom: 4.5,
+    zoom: 5,
     highlightOptions: {
       color: "#00e6e6",
       haloOpacity: 1,
