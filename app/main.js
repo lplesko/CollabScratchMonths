@@ -391,25 +391,9 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                                 },
                                 {
                                   fieldName: "UniqueMonth_cnt",
-                                  label: "Total unique individual visits",
+                                  label: "Total unique individuals",
                                   format: {
                                     digitSeparator: true,
-                                    places: 0
-                                  }
-                                },
-                                {
-                                  fieldName: "DupMonth_adults",
-                                  label: "Adults",
-                                  format: {
-                                    digitSeparator: true,
-                                    places: 0
-                                  }
-                                },
-                                {
-                                  fieldName: "DupMonth_children",
-                                  label: "Children",
-                                  format: {
-                                    digitSeparator: true, 
                                     places: 0
                                   }
                                 }
