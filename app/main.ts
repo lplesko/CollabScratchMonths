@@ -226,25 +226,9 @@ import { months, years } from "./constants";
             },
             {
               fieldName: "UniqueMonth_cnt",
-              label: "Total unique individual visits",
+              label: "Total unique individuals",
               format: {
                 digitSeparator: true,
-                places: 0
-              }
-            },
-            {
-              fieldName: "DupMonth_adults",
-              label: "Adults",
-              format: {
-                digitSeparator: true,
-                places: 0
-              }
-            },
-            {
-              fieldName: "DupMonth_children",
-              label: "Children",
-              format: {
-                digitSeparator: true, 
                 places: 0
               }
             }
