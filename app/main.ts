@@ -325,7 +325,8 @@ import { months, years } from "./constants";
     });
   
   const search = new Search({
-    view: view
+    view: view,
+    locationEnabled: false
   });
 
   await view.when();
