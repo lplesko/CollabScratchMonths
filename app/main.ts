@@ -335,6 +335,7 @@ import { months, years } from "./constants";
     content: document.getElementById("chartDiv"),
     expandIconClass: "esri-icon-chart",
     group: "top-left"
+    expanded: true
   });
   view.ui.add(chartExpand, "top-left");
   view.ui.add("logoDiv", "bottom-left");
