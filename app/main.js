@@ -477,7 +477,7 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                             fillOpacity: 0
                         }
                     });
-                    legend = new Expand({
+                        legend = new Expand({
                             content: new Legend({
                                 view: view,
                                 expanded: true,
@@ -488,7 +488,7 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                                     }
                                 ]
                             });
-                    });
+                        });
                     search = new Search({
                         view: view,
                         locationEnabled: false
