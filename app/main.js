@@ -382,16 +382,32 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                                   }
                                 },
                                 {
-                                  fieldName: "Total_visits_dup",
-                                  label: "Total visits to a food bank",
+                                  fieldName: "UniqueMonth_cnt",
+                                  label: "Total unique individuals",
                                   format: {
                                     digitSeparator: true,
                                     places: 0
                                   }
                                 },
+                                {	
+                                  fieldName: "DupMonth_adults",	
+                                  label: "Adults",	
+                                  format: {	
+                                    digitSeparator: true,	
+                                    places: 0	
+                                  }	
+                                },	
+                                {	
+                                  fieldName: "DupMonth_children",	
+                                  label: "Children",	
+                                  format: {	
+                                    digitSeparator: true, 	
+                                    places: 0	
+                                  }	
+                                },
                                 {
-                                  fieldName: "UniqueMonth_cnt",
-                                  label: "Total unique individuals",
+                                  fieldName: "Total_visits_dup",
+                                  label: "Total visits (children + adults)",
                                   format: {
                                     digitSeparator: true,
                                     places: 0
