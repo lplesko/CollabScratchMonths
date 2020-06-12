@@ -17,7 +17,22 @@ import Search = require("esri/widgets/Search");
 import { months, years } from "./constants";
 
 ( async () => {
-
+  const northernLayer = new FeatureLayer({
+      portalItem: {
+          id: "0be94b8c12f646ba840a3b4bb5b20b2e"
+      },
+      outFields: ["*"],
+      popupTemplate: {
+          title: "{ENGLISH_NA}",
+          content:[
+            {
+              type: "text",
+              text:
+                "Northern Statement........"
+            }]
+        }
+  }); 
+  
   const layer = new FeatureLayer({
     portalItem: {
       id: "276c8a6d3c51441d9d2d4ff9475e88b9"
@@ -299,7 +314,7 @@ import { months, years } from "./constants";
 
   const map = new EsriMap({
     basemap: "gray",
-    layers: [ layer, districtsLayer ]
+    layers: [ northernLayer, layer, districtsLayer ]
   });
 
   const view = new MapView({
