@@ -487,7 +487,7 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                                         title: "Food Bank Use by Electoral Riding"
                                     }
                                 ]
-                            });
+                            })
                         });
                     search = new Search({
                         view: view,
