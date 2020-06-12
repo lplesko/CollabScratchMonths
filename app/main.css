@@ -87,18 +87,3 @@ p {
   align-items: center;
   transition: background-color 125ms ease-in-out;
 }
-
-.esri-view-height-xsmall
-  .esri-ui-corner
-  .esri-expand
-  .esri-legend.esri-widget,
-.esri-view-height-small
-  .esri-ui-corner
-  .esri-expand
-  .esri-legend.esri-widget {
-  max-height: 100%;
-}
-
-.esri-view-width-less-than-small .esri-zoom .esri-widget--button {
-  display: none;
-}
