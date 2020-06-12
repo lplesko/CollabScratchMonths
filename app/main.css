@@ -13,6 +13,7 @@ p {
 #chartDiv {
   padding: 10px;
   background-color: white;
+  overflow-y: auto;
 }
 
 #resetBtn {
@@ -78,7 +79,7 @@ p {
   height: 32px;
   padding: 0;
   margin: 0;
-  overflow: auto;
+  overflow: hidden;
   cursor: pointer;
   text-align: center;
   display: flex;
