@@ -480,14 +480,15 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                         legend = new Expand({
                             content: new Legend({
                                 view: view,
-                                expanded: true,
                                 layerInfos: [
                                     {
                                         layer: layer,
                                         title: "Food Bank Use by Electoral Riding"
                                     }
                                 ]
-                            })
+                            }),
+                            view: view,
+                            expanded: true
                         });
                     search = new Search({
                         view: view,
