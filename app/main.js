@@ -477,15 +477,18 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                             fillOpacity: 0
                         }
                     });
-                        legend = new Legend({
-                            view: view,
-                            layerInfos: [
-                                {
-                                    layer: layer,
-                                    title: "Food Bank Use by Electoral Riding"
-                                }
-                            ]
-                        });                    
+                    legend = new Expand({
+                            content: new Legend({
+                                view: view,
+                                expanded: true,
+                                layerInfos: [
+                                    {
+                                        layer: layer,
+                                        title: "Food Bank Use by Electoral Riding"
+                                    }
+                                ]
+                            });
+                    });
                     search = new Search({
                         view: view,
                         locationEnabled: false
