@@ -226,7 +226,7 @@ import { months, years } from "./constants";
             },
             {	
               fieldName: "DupMonth_adults",	
-              label: "Adults",	
+              label: "Total visits (adults)",	
               format: {	
                 digitSeparator: true,	
                 places: 0	
@@ -234,7 +234,7 @@ import { months, years } from "./constants";
             },	
             {	
               fieldName: "DupMonth_children",	
-              label: "Children",	
+              label: "Total visits (children)",	
               format: {	
                 digitSeparator: true, 	
                 places: 0	
@@ -242,7 +242,7 @@ import { months, years } from "./constants";
             },
             {
               fieldName: "Total_visits_dup",
-              label: "Total visits (children + adults)",
+              label: "Total visits (adults + children)",
               format: {
                 digitSeparator: true,
                 places: 0
