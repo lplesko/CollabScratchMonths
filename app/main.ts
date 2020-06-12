@@ -33,7 +33,7 @@ import { months, years } from "./constants";
          // expression: "$feature.UniqueHousing_private_rental"
           name: "1in1000",
           title: "1in1000 Popup",
-          expression: "Round(((($feature.UniqueMonth_cnt)/($feature.Pop2016))*10),1)",
+          expression: "Round(((($feature.Cnt_perc)*10),1)",
           fieldInfos: [
           //the following sets will ensure that the income and housing field names appear as their designated LABEL in pie chart
           {
