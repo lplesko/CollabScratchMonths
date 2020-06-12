@@ -391,7 +391,7 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                                 },
                                 {	
                                   fieldName: "DupMonth_adults",	
-                                  label: "Adults",	
+                                  label: "Total visits (adults)",	
                                   format: {	
                                     digitSeparator: true,	
                                     places: 0	
@@ -399,7 +399,7 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                                 },	
                                 {	
                                   fieldName: "DupMonth_children",	
-                                  label: "Children",	
+                                  label: "Total visits (children)",	
                                   format: {	
                                     digitSeparator: true, 	
                                     places: 0	
@@ -407,7 +407,7 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                                 },
                                 {
                                   fieldName: "Total_visits_dup",
-                                  label: "Total visits (children + adults)",
+                                  label: "Total visits (adults + children)",
                                   format: {
                                     digitSeparator: true,
                                     places: 0
