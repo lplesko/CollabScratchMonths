@@ -179,7 +179,7 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
             }
             heatmapChart_1.updateGrid(layerStats, layerView, true);
         }
-        var layer, districtsLayer, map, mapList, view, legend, search, chartExpand, layerView, districtsLayerView, layerStats, highlight, previousId, resetBtn;
+        var layer, districtsLayer, map, mapList, view, legend, expandLegend, search, chartExpand, layerView, districtsLayerView, layerStats, highlight, previousId, resetBtn;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -477,8 +477,12 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                             fillOpacity: 0
                         }
                     });
+                        
+                        // desktop legend
+                    
                         legend = new Legend({
                             view: view,
+                            container: document.createElement("div"),
                             layerInfos: [
                                 {
                                     layer: layer,
@@ -486,6 +490,62 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                                 }
                             ]
                         });
+                        
+                        // mobile legend
+                    
+                        expandLegend = new Expand({
+                            view: view,
+                            content: new Legend({
+                                view: view,
+                                container: document.createElement("div")
+                            })
+                        });
+                        
+                        // load the legend
+                    
+                        isResponsiveSize = view.widthBreakpoint === "xsmall";
+                        updateView(isResponsiveSize);
+
+                        // breakpoints
+
+                        view.watch("widthBreakpoint", function(breakpoint) {
+                          switch (breakpoint) {
+                            case "xsmall":
+                              updateView(true);
+                              break;
+                            case "small":
+                            case "medium":
+                            case "large":
+                            case "xlarge":
+                              updateView(false);
+                              break;
+                            default:
+                          }
+                        });
+
+                        function updateView(isMobile) {
+                          setTitleMobile(isMobile);
+                          setLegendMobile(isMobile);
+                        }
+
+                        function setTitleMobile(isMobile) {
+                          if (isMobile) {
+                            document.querySelector("#titleDiv").classList.add("invisible");
+                            view.padding = {
+                              top: 0
+                            };
+                          } else {
+                            document.querySelector("#titleDiv").classList.remove("invisible");
+                            view.padding = {
+                              top: 55
+                            };
+                          }
+                        }
+
+                        function setLegendMobile(isMobile) {
+                          var toAdd = isMobile ? expandLegend : legend;
+                          var toRemove = isMobile ? legend : expandLegend;
+                        }
                     
                     search = new Search({
                         view: view,
@@ -505,6 +565,8 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                     view.ui.add(chartExpand, "top-left");
                     view.ui.add(search, "top-right");
                     view.ui.add(legend, "bottom-right");
+                    view.ui.remove(toRemove);
+                    view.ui.add(toAdd, "top-right");
                     return [4 /*yield*/, view.whenLayerView(layer)];
                 case 2:
                     layerView = _a.sent();
