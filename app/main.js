@@ -277,14 +277,6 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                             }
                           },
                           {
-                            fieldName: "Unknown_Housing",
-                            label: "Unknown Housing",
-                            format: {
-                              digitSeparator: true,
-                              places: 0
-                            }
-                          },
-                          {
                             fieldName: "Canada_Child_Benefit",
                             label: "Canada Child Benefit",
                             format: {
@@ -355,14 +347,6 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                               digitSeparator: true,
                               places: 0
                             }
-                          },
-                          {
-                            fieldName: "Unknown_Income",
-                            label: "Unknown Income",
-                            format: {
-                              digitSeparator: true,
-                              places: 0
-                            }
                           }
                           ],  
                           content:[
@@ -429,7 +413,7 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                                   type: "column-chart",
                                   caption: "",
                                   value: {
-                                    fields: ["Band_Owned", "Emergency_Shelter", "On_the_Street", "Rooming_House", "Own_Home", "Private_Rental", "Social_Housing", "Family_or_Friends", "Youth_Home_Shelter", "Unknown_Housing"],
+                                    fields: ["Band_Owned", "Emergency_Shelter", "On_the_Street", "Rooming_House", "Own_Home", "Private_Rental", "Social_Housing", "Family_or_Friends", "Youth_Home_Shelter"],
                                     normalizeField: null
                                   }
                                 }
@@ -448,7 +432,7 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                                   type: "column-chart",
                                   caption: "Hover over a bar to learn more about who is visiting food banks in this riding.",
                                   value: {
-                                    fields: [ "Canada_Child_Benefit", "Disability_Benefits", "Employment", "Employment_Insurance", "No_Income", "Pension", "Provincial_Disability", "Social_Assistance", "Student_Loan", "Unknown_Income"],
+                                    fields: [ "Canada_Child_Benefit", "Disability_Benefits", "Employment", "Employment_Insurance", "No_Income", "Pension", "Provincial_Disability", "Social_Assistance", "Student_Loan"],
                                     normalizeField: null
                                   }
                                 }
