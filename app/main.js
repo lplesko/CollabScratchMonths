@@ -353,7 +353,7 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                             {
                               type: "text",
                               text:
-                                "In this electoral riding, {expression/1in1000} out of 1000 people accessed a food bank this month."
+                                "In this electoral riding, {expression/1in1000} out of 1000 people accessed a food bank at least once this month."
                             },
                             {
                               type: "fields",
