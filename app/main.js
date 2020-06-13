@@ -428,7 +428,7 @@ define(["require", "exports", "esri/Map", "esri/views/MapView", "esri/layers/Fea
                               type: "media",
                               mediaInfos: [
                                 {
-                                  title: "<b> Primary Source of Income</b>",
+                                  title: null,
                                   type: "column-chart",
                                   caption: "Hover over a bar to learn more about who is visiting food banks in this riding.",
                                   value: {
